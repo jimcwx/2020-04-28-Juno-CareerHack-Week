@@ -11,14 +11,20 @@ app.use(staticMiddleware);
 // I can visit it by going to localhost:3000
 
 // i changed my route because I want my "index.html" to be from the server
-
+let numberOfClicks = 0;
 
 app.get('/api/json', (req, res) => {
   const json = {};
   json.message = "Hello World";
-  json.otherMessage = "Foo Baz Bar"
+  json.otherMessage = "Foo Baz Bar blah"
+  json.numberOfClicks = numberOfClicks;
   res.json(json);
 });
+
+app.post('/api/json', (req, res) => {
+  numberOfClicks++;
+  res.redirect('/');
+})
 
 // start the server and take port 3000
 app.listen(
