@@ -19,5 +19,9 @@
   "homepage": "https://github.com/jimcwx/2020-04-28-Juno-CareerHack-Week#readme",
   "dependencies": {
     "express": "^4.17.1"
+  },
+
+  "scripts": {
+    "start": "node server.js"
   }
 }
